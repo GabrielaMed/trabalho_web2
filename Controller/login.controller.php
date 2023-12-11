@@ -25,7 +25,7 @@ function signin()
 
         $_SESSION['dados_usuario'] = $user;
 
-        require('./../View/animais.view.php');
+        require('./../View/viagens.view.php');
     } else {
         $msg = 'Usuário ou senha incorretos';
         require('./../View/handler.view.php');
