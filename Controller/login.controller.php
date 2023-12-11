@@ -18,7 +18,7 @@ function signin()
     $msg = '';
 
     $user = new Usuario();
-    $user->login = $_POST['usuario'];
+    $user->usuario = $_POST['usuario'];
     $user->senha = md5($_POST['senha']);
 
     if ($user->signin()) {
