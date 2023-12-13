@@ -58,7 +58,7 @@ require('./../View/header.view.php');
 
     <div>
         <a href="./../Controller/viagens.controller.php?action=cadastro">Cadastrar</a>
-        <a href="./../Controller/viagens.ontroller.php?action=lista">Listar</a> 
+        <a href="./../Controller/viagens.controller.php?action=lista">Listar</a> 
     </div>
 
     

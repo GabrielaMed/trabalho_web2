@@ -7,7 +7,7 @@ class Viagem{
     private $id;
     private $nome;
     private $descricao;
-    private $caminho_foto;
+    private $caminho_imagem;
 
     function __get($name){
         return $this->$name;
@@ -17,10 +17,10 @@ class Viagem{
         $this->$name = $value;
     }
 
-    function __construct($nome, $descricao=null, $caminho_foto=null){
+    function __construct($nome, $descricao=null, $caminho_imagem=null){
         $this->nome = $nome;
         $this->descricao = ($descricao == '' ? null : $descricao);
-        $this->caminho_foto = $caminho_foto == '' ? null : $caminho_foto;
+        $this->caminho_imagem = $caminho_imagem == '' ? null : $caminho_imagem;
     }
 
     static function getAll(){
