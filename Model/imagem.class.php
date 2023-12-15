@@ -15,7 +15,7 @@ class Imagem{
     }
 
 
-    function salvaImagemUpload(){
+    function saveImage(){
 
         if($this->arquivo["tmp_name"] == null) return false;
 
