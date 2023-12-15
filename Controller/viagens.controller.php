@@ -13,10 +13,6 @@ else
             throw new Exception("Error! Sem action no POST.");
         }
         else if($_POST["action"] == "salvar"){
-
-            var_dump($_POST);
-            var_dump($_FILES);
-
             if (!isset($_POST["nome"], $_POST["desc"], $_FILES["caminho_imagem"])) {
                 throw new Exception("Error! Campos obrigatórios não preenchidos.");
             }

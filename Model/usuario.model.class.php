@@ -21,7 +21,7 @@ class Usuario
     {
         $sql = "SELECT * FROM usuarios 
         WHERE usuarios.usuario = :usuario AND usuarios.senha = :senha";
-        //conecta ao BD
+  
         $con = conectar();
         $query = $con->prepare($sql);
         $query->bindParam(':usuario', $this->usuario);

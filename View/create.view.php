@@ -74,8 +74,8 @@ require('./../View/header.view.php');
 
     <form method="post" action="./../Controller/viagens.controller.php" enctype="multipart/form-data">
         <input required type="text" placeholder="Nome" name="nome">
-        <textarea placeholder="Descricao" name="desc"></textarea>
-        <input type="file" placeholder="Foto" name="caminho_imagem">
+        <textarea required placeholder="Descricao" name="desc"></textarea>
+        <input required type="file" placeholder="Foto" name="caminho_imagem">
         <input type="hidden" name="action" value="salvar">
         <input type="submit">
     </form>
