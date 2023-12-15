@@ -1,3 +1,6 @@
+<?php
+require('./../View/header.view.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Cadastro Viagens</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,19 +16,16 @@
             padding: 0;
             box-sizing: border-box;
             background-color: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
         }
 
         h1 {
             text-align: center;
             color: #333;
+            margin-bottom: 30px;
         }
 
         form {
-            max-width: 300px;
+            max-width: 400px;
             margin: 0 auto;
             background-color: #fff;
             padding: 20px;
@@ -33,7 +33,9 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        input {
+        input,
+        textarea,
+        select {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
@@ -43,8 +45,12 @@
             font-size: 16px;
         }
 
+        input[type="file"] {
+            cursor: pointer;
+        }
+
         input[type="submit"] {
-            background-color: #4caf50;
+            background-color: orchid;
             color: #fff;
             padding: 12px 20px;
             border: none;
@@ -54,23 +60,24 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: darkorchid;
+        }
+
+        textarea {
+            resize: vertical;
         }
     </style>
 </head>
 
 <body>
-    <h1>LOGIN</h1>
-    <form method="post" action="./../Controller/login.controller.php">
-        <div>
-            <input required name="usuario" type="text" placeholder="Usuario">
-        </div>
-        <div>
-            <input required name="senha" type="password" placeholder="Senha">
-        </div>
-        <div>
-            <input type="submit" value="Login">
-        </div>
+    <h1>Cadastro</h1>
+
+    <form method="post" action="./../Controller/viagens.controller.php" enctype="multipart/form-data">
+        <input required type="text" placeholder="Nome" name="nome">
+        <textarea required placeholder="Descricao" name="desc"></textarea>
+        <input required type="file" placeholder="Foto" name="caminho_imagem">
+        <input type="hidden" name="action" value="salvar">
+        <input type="submit">
     </form>
 </body>
 

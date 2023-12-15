@@ -20,8 +20,8 @@ class Usuario
     function signin()
     {
         $sql = "SELECT * FROM usuarios 
-        WHERE usuarios.usuario = :usuario AND usuarios.senha =s :senha";
-        //conecta ao BD
+        WHERE usuarios.usuario = :usuario AND usuarios.senha = :senha";
+  
         $con = conectar();
         $query = $con->prepare($sql);
         $query->bindParam(':usuario', $this->usuario);
