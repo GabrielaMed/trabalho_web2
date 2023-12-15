@@ -13,7 +13,11 @@ else
             throw new Exception("Error! Sem action no POST.");
         }
         else if($_POST["action"] == "salvar"){
-            if (!isset($_POST["action"], $_POST["nome"], $_POST["desc"], $_POST["sexo"], $_FILES["foto"])) {
+
+            var_dump($_POST);
+            var_dump($_FILES);
+
+            if (!isset($_POST["nome"], $_POST["desc"], $_FILES["caminho_imagem"])) {
                 throw new Exception("Error! Campos obrigatórios não preenchidos.");
             }
 
@@ -26,7 +30,7 @@ else
             $deuCerto = $obj->create();
     
             if($deuCerto){
-                include('./../View/lista-viagem.view.php');
+                include('./../View/lista-viagens.view.php');
                 exit();
             }
             else{
@@ -48,8 +52,10 @@ function getViagens(){
     else if($_GET['action'] == 'lista'){
         require('./../View/lista-viagens.view.php');
     }
-    else if($_GET['action'] == 'excluir'){
-        Viagem::delete($_GET['id']);
+    else if($_GET['action'] == 'excluir' && isset($_GET['id'])){
+        if (!empty($_GET['id'])) {
+            Viagem::delete($_GET['id']);
+        }
         require('./../View/lista-viagens.view.php');
     }
     else{

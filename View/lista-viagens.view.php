@@ -8,6 +8,7 @@
   <title>Viagens</title>
   <style>
     .main {
+      font-family: Arial, sans-serif;
       background-color: #f0f0f0;
       display: flex;
       flex-direction: column;
@@ -65,7 +66,6 @@
        position: absolute;
       top: 10px;
       right: 10px;
-      /* text-align: right; Align the icon to the right within the container */
     }
 
     .icon {

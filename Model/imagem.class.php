@@ -3,7 +3,7 @@
 class Imagem{
     private $pasta;
     private $arquivo;
-    private $nomeDefinitivo = null;
+    private $caminho_imagem = null;
 
     function __construct($pasta, $arquivo){
         $this->pasta = $pasta;
@@ -27,10 +27,12 @@ class Imagem{
 
         $destino = $this->pasta . $nomeUnico. basename($this->arquivo['name']);
 
-        $this->nomeDefinitivo = $destino;
+        $this->caminho_imagem = $destino;
 
         return
         move_uploaded_file($this->arquivo['tmp_name'], $destino);
     }
 
 }
+
+?>
